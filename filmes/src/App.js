@@ -1,10 +1,12 @@
 import './App.css';
-import Login from "./pages/login/Login.jsx";
+import CadastroFilme from './pages/cadastroFilme/CadastroFilme.jsx';
+{/*import Login from "./pages/login/Login.jsx";*/}
 
 function App() {
   return (
     <>
-    <Login/>
+    {/*<Login/>*/}
+    <CadastroFilme/>
       </>
   );
 }
