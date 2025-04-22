@@ -1,19 +1,88 @@
 /* A mae de todos: */
-.main_login{
+.main_login {
     display: flex;
     height: 100vh;
 
 }
 
 /*Banner da esquerda: */
-.banner{
+.banner {
     background-image: url("../../assets/img/fundoLogin.png");
     flex: 1;
+
+    /* Modificar algumas caracteristicas da imagem: */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 
 
+
+
 /*Form de Login da direita: */
-.section_login{
+.section_login {
     flex: 1;
+    background-color: #CC3F55;
+
+    /*Centraliza o campo:*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_login img {
+    width: 200px;
+}
+
+.form_login {
+    color: rgb(249, 252, 255);
+
+    width: 70%;
+    height: 50%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form_login h1 {
+    /*Vai deixar o titulo com letras maiusculas*/
+    text-transform: uppercase;
+}
+
+.campos_login {
+    width: 100%;
+}
+
+.campos_input {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 22px;
+
+}
+
+.campos_input input {
+    height: 30px;
+    padding: 2px 3px;
+    margin-top: 7px;
+
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 1px 4px 4px 0px #00000045;
+
+}
+/*RESPONSIVIDADE*/
+/*Me de algumas caracteristicas a partir de um tamanho de tela*/
+@media screen and (max-width: 768px){
+    /*0px => 768px */
+    .banner{
+        /* display: none; => desaperece o banner*/
+        display: none;
+    }
 }
