@@ -21,7 +21,7 @@ const Login = () => {
                         </div>
                     </div>
                     <Botao />
-                </form> 
+                </form>
             </section>
         </main>
     );

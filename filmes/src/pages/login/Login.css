@@ -77,11 +77,13 @@
     box-shadow: 1px 4px 4px 0px #00000045;
 
 }
+
 /*RESPONSIVIDADE*/
 /*Me de algumas caracteristicas a partir de um tamanho de tela*/
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
+
     /*0px => 768px */
-    .banner{
+    .banner {
         /* display: none; => desaperece o banner*/
         display: none;
     }
