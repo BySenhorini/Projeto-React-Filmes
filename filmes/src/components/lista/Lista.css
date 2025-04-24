@@ -1,0 +1,54 @@
+td {
+    width: 100px;
+    height: 100px;
+}
+
+.listagem {
+    /* vamos retirar o tamanho do header, o tamanho do cadastro e do footer */
+    min-height: calc(100vh - (75px + 252px + 40px));
+
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+
+    padding: 40px 0;
+
+}
+
+
+.listagem h1 {
+    text-transform: uppercase;
+}
+
+.listagem hr {
+    max-width: 300px;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fefefe;
+
+    margin-top: 5px;
+
+}
+
+.item_lista img {
+    height: 28px;
+}
+
+.tabela {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.cabecalho :first-child {
+    width: 300px;
+
+}
+
+.cabecalho :nth-child(2) {
+    width: 200px;
+}
+
+.cabecalho th {
+    width: 100px;
+}

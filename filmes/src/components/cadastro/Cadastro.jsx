@@ -13,12 +13,15 @@ const Cadastro = () => {
                         <input type="text" name="nome" placeholder="Digite o nome do  filme:" />
                     </div>
                     <div className="campo_cad_genero">
-                        <label htmlFor="genero">Genero</label>
+                        <label htmlFor="genero">Gênero</label>
                         <select name="genero" id="">
                             <option value="" disabled selected>Selecione</option>
                             <option value="">Romance</option>
                             <option value="">Suspense</option>
                             <option value="">Terror</option>
+                            <option value="">Aventura</option>
+                            <option value="">Comédia</option>
+                            <option value="">Ação</option>
                         </select>
                     </div>
                     <Botao />
