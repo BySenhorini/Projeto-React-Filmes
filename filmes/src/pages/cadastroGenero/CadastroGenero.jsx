@@ -9,11 +9,15 @@ const CadastroGenero = () => {
          <Header />
          <main>
 
-            <Cadastro titulo="Cadastro de Genero"
+            <Cadastro titulo="Cadastro de Gêneros"
                visibilidade="none"
-               placeholder="Genero"
+               placeholder="gênero"
             />
-            <Lista />
+            <Lista  
+            tituloLista="Lista de Gêneros"
+            visibilidade="none"/> 
+            
+           
 
          </main>
          <Footer />
@@ -22,4 +26,5 @@ const CadastroGenero = () => {
    )
 }
 export default CadastroGenero;
+
 
