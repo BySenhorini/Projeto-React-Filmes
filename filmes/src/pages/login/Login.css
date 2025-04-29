@@ -1,12 +1,12 @@
-/* A mae de todos: */
-.main_login {
+/* A mãe de todos: */
+.main_login{
     display: flex;
-    height: 100vh;
 
+        height: 100vh;
 }
 
-/*Banner da esquerda: */
-.banner {
+/* Banner da esquerda: */
+.banner{
     background-image: url("../../assets/img/fundoLogin.png");
     flex: 1;
 
@@ -16,75 +16,66 @@
     background-repeat: no-repeat;
 }
 
-
-
-
-
-/*Form de Login da direita: */
-.section_login {
+/* Form de login da direita: */
+.section_login{
     flex: 1;
+
     background-color: #CC3F55;
 
-    /*Centraliza o campo:*/
-
+    /* Centraliza o campo: */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.section_login img {
-    width: 200px;
-}
-
-.form_login {
-    color: rgb(249, 252, 255);
+.form_login{
+    color: white;
 
     width: 70%;
     height: 50%;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
 }
 
-.form_login h1 {
-    /*Vai deixar o titulo com letras maiusculas*/
+.form_login h1{
+    /* Vai deixar o titulo com letras maiusculas */
     text-transform: uppercase;
 }
 
-.campos_login {
+.campos_login{
     width: 100%;
 }
 
-.campos_input {
+.campo_input {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 22px;
-
+    margin-bottom: 20px;
 }
 
-.campos_input input {
+.campo_input input{
     height: 30px;
-    padding: 2px 3px;
+    padding: 0 10px;
     margin-top: 7px;
 
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 6px;
     box-shadow: 1px 4px 4px 0px #00000045;
-
 }
 
-/*RESPONSIVIDADE*/
-/*Me de algumas caracteristicas a partir de um tamanho de tela*/
-@media screen and (max-width: 768px) {
+/* RESPONSIVIDADE 😊🤪🎉 */
 
-    /*0px => 768px */
-    .banner {
-        /* display: none; => desaperece o banner*/
+/* Me de algumas caracteristicas a 
+partir de um tamanho de tela */
+@media screen and (max-width: 768px){
+    /* 0px -> 768px */
+    .banner{
+        /* display: nonde; =>desaparece o banner */
         display: none;
     }
 }

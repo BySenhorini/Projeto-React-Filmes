@@ -1,19 +1,20 @@
-import { Fragment } from "react";
+// import { Fragment } from "react";
 import Cadastro from "../../components/cadastro/Cadastro";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Lista from "../../components/lista/Lista";
 
 const CadastroFilme = () => {
-    return (
-        <Fragment>
-            <Header />
+    return(
+        <>
+            <Header/>
             <main>
-                <Cadastro />
-                <Lista />
+                <Cadastro/>
+                <Lista/>
             </main>
-            <Footer />
-        </Fragment>
+            <Footer/>
+        </>
     )
 }
+
 export default CadastroFilme;

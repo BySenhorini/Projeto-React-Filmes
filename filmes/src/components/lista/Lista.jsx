@@ -12,7 +12,7 @@ const Lista = () => {
                     {/* cabecalho da tabela */}
                     <thead>
                         {/* table row */}
-                        <tr className="cabecalho">
+                        <tr className="table_cabecalho">
                             {/* table head */}
                             <th>Nome</th>
                             <th>Genero</th>
@@ -23,15 +23,32 @@ const Lista = () => {
                     {/* tbody é o corpo da tabela */}
                     <tbody>
                         <tr className="item_lista">
-                            <td>Velozes e Furiosos</td>
-                            <td>Ação</td>
-                            <td>Gente Grande</td>
-                            <td>Comédia</td>
-                            <td>Titanic</td>
-                            <td>Romance</td>
+                            <td data-cell="Nome">Velozes e Furiosos</td>
+                            <td data-cell="Genero">Ação</td>
 
-                            <td><img src={Editar} alt="" /></td>
-                            <td><img src={Excluir} alt="" /></td>
+                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
+                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
+                        </tr>
+                        <tr className="item_lista">
+                            <td data-cell="Nome">Invocação do Mal</td>
+                            <td data-cell="Genero">Terror</td>
+
+                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
+                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
+                        </tr>
+                        <tr className="item_lista">
+                            <td data-cell="Nome">Minions</td>
+                            <td data-cell="Genero">Animação</td>
+
+                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
+                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
+                        </tr>
+                        <tr className="item_lista">
+                            <td data-cell="Nome">Esquadrão 6</td>
+                            <td data-cell="Genero">Suspense</td>
+
+                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
+                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
                         </tr>
 
 
