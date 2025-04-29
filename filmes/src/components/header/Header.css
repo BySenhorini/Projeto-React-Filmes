@@ -2,7 +2,7 @@
 . -> classe
 # -> id
  */
- header{
+header {
     background-color: #CC3F55;
 
     height: 75px;
@@ -12,7 +12,7 @@
     position: relative;
 }
 
-.cabecalho{
+.cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,11 +20,11 @@
     width: 100%;
 }
 
-.cabecalho img{
+.cabecalho img {
     height: 60px;
 }
 
-.link_header{
+.link_header {
     margin-left: 45px;
 
     color: white;
@@ -32,12 +32,12 @@
     text-decoration: none;
 }
 
-@media screen and (max-width: 768px){
-    .cabecalho img{
+@media screen and (max-width: 768px) {
+    .cabecalho img {
         height: 35px;
     }
 
-    .link_header{
+    .link_header {
         margin-left: 10px;
     }
 }

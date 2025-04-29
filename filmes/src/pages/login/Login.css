@@ -1,12 +1,12 @@
 /* A mãe de todos: */
-.main_login{
+.main_login {
     display: flex;
 
-        height: 100vh;
+    height: 100vh;
 }
 
 /* Banner da esquerda: */
-.banner{
+.banner {
     background-image: url("../../assets/img/fundoLogin.png");
     flex: 1;
 
@@ -17,7 +17,7 @@
 }
 
 /* Form de login da direita: */
-.section_login{
+.section_login {
     flex: 1;
 
     background-color: #CC3F55;
@@ -29,7 +29,7 @@
     justify-content: center;
 }
 
-.form_login{
+.form_login {
     color: white;
 
     width: 70%;
@@ -41,12 +41,12 @@
     flex-direction: column;
 }
 
-.form_login h1{
+.form_login h1 {
     /* Vai deixar o titulo com letras maiusculas */
     text-transform: uppercase;
 }
 
-.campos_login{
+.campos_login {
     width: 100%;
 }
 
@@ -57,7 +57,7 @@
     margin-bottom: 20px;
 }
 
-.campo_input input{
+.campo_input input {
     height: 30px;
     padding: 0 10px;
     margin-top: 7px;
@@ -72,9 +72,10 @@
 
 /* Me de algumas caracteristicas a 
 partir de um tamanho de tela */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
+
     /* 0px -> 768px */
-    .banner{
+    .banner {
         /* display: nonde; =>desaparece o banner */
         display: none;
     }

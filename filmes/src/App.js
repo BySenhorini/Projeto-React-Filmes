@@ -1,14 +1,9 @@
 import './App.css';
-import CadastroFilme from './pages/cadastroFilme/CadastroFilme.jsx';
-// import Login from "./pages/login/Login.jsx"
+import Rotas from "./Routes/routes"
 
 function App() {
   return (
-    <>
-      {/* chamar as páginas */}
-      {/* <Login/> */}
-      <CadastroFilme/>
-    </>
+    <Rotas/>
   );
 }
 
