@@ -16,6 +16,7 @@ const CadastroGenero = () => {
   //nome do genero
   const [genero, setGenero] = useState("");
   const [listaGenero, setListaGenero] = useState([]);
+const [deletaGenero, setDeletaGenero] = useState();
 
   function alerta(icone, mensagem) {
     const Toast = Swal.mixin({
@@ -70,6 +71,38 @@ const CadastroGenero = () => {
 
     }
   }
+  async function excluirGenero(idGenero) {
+
+
+    try {
+      const excluirgenero = await api.delete(`genero/${idGenero}`);
+      setDeletaGenero(excluirgenero.data)
+
+
+      Swal.fire({
+        title: "Você tem certeza?",
+        text: "Essa alteração não poderá ser alterada!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim, delete isso!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deletado!",
+            text: "Seus arquivos vão ser deletados!",
+            icon: "success"
+          });
+        }
+      });
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
+
 
 
   // //Teste
@@ -106,11 +139,11 @@ const CadastroGenero = () => {
         />
         <Lista
           tituloLista="Lista de Gêneros"
-          visibilidade="none" 
+          visibilidade="none"
           lista={listaGenero}
-          
-          />
-          {/* atribuir para lista, o meu estado atual */}
+          deletar={excluirGenero}
+        />
+        {/* atribuir para lista, o meu estado atual */}
 
 
 
