@@ -15,50 +15,29 @@ const Lista = (props) => {
                         <tr className="table_cabecalho">
                             {/* table head */}
                             <th>Nome</th>
-                            <th style={{display:props.visibilidade}}>Gênero</th>
+                            <th style={{ display: props.visibilidade }}>Gênero</th>
                             <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
                     </thead>
                     {/* tbody é o corpo da tabela */}
                     <tbody>
-                        <tr className="item_lista">
-                            <td style={{display:props.visibilidade}} data-cell="Nome">Velozes e Furiosos</td>
-                            <td data-cell="Genero">Ação</td>
-
-                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
-                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
-                        </tr>
-                        <tr className="item_lista">
-                            <td style={{display:props.visibilidade}} data-cell="Nome">Invocação do Mal</td>
-                            <td data-cell="Genero">Terror</td>
-
-                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
-                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
-                        </tr>
-                        <tr className="item_lista">
-                            <td style={{display:props.visibilidade}} data-cell="Nome">Minions</td>
-                            <td data-cell="Genero">Animação</td>
-
-                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
-                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
-                        </tr>
-                        <tr className="item_lista">
-                            <td style={{display:props.visibilidade}} data-cell="Nome">Esquadrão 6</td>
-                            <td data-cell="Genero">Suspense</td>
-
-                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
-                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
-                        </tr>
-                        <tr className="item_lista">
-                            <td style={{display:props.visibilidade}} data-cell="Nome">Kakegurui</td>
-                            <td data-cell="Genero">Drama</td>
-
-                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
-                            <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
-                        </tr>
-
-
+                        {/* verificar se a lista esta vindo vazia */}
+                        {props.lista && props.lista.length > 0 ? (
+                            // vamos mapear os itens da lista
+                            props.lista.map((item) => (
+                                <tr className="item_lista" key={item.idGenero}>
+                                    <td  data-cell="Nome">{item.nome}</td>
+                                    <td data-cell="Genero" style={{ display: props.visibilidade }}>Terror</td>
+                                    <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
+                                    <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" /></td>
+                                </tr>
+                            ))
+                        ) :
+                            (
+                                <p>Nenhum genero foi encontrado.</p>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>
