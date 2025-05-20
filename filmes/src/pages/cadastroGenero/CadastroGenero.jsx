@@ -11,12 +11,12 @@ import Footer from "../../components/footer/Footer"
 import Cadastro from "../../components/cadastro/Cadastro";
 import Lista from "../../components/lista/Lista";
 
+
 const CadastroGenero = () => {
 
   //nome do genero
   const [genero, setGenero] = useState("");
   const [listaGenero, setListaGenero] = useState([]);
-  const [deletaGenero, setDeletaGenero] = useState();
 
 
   function alerta(icone, mensagem) {
@@ -57,14 +57,14 @@ const CadastroGenero = () => {
       }
     }
     else {
-      alert("error", "Erro! Preencha o campo")
+      alerta("error", "Erro! Preencha o campo")
     }
 
   }
   async function listarGenero() {
     try {
       const resposta = await api.get("genero")
-      console.log(resposta.data);
+      // console.log(resposta.data);
       setListaGenero(resposta.data);
 
     } catch (error) {
@@ -74,12 +74,7 @@ const CadastroGenero = () => {
     }
   }
   async function excluirGenero(idGenero) {
-
     try {
-      const excluirgenero = await api.delete(`genero/${idGenero}`);
-      setDeletaGenero(excluirgenero.data)
-
-
       Swal.fire({
         title: "Você tem certeza?",
         text: "Essa alteração não poderá ser desfeita!",
@@ -90,6 +85,7 @@ const CadastroGenero = () => {
         confirmButtonText: "Sim, delete isso!"
       }).then((result) => {
         if (result.isConfirmed) {
+          api.delete(`genero/${idGenero}`);
           Swal.fire({
             title: "Deletado!",
             text: "Seus arquivos serão deletados!",
@@ -102,7 +98,30 @@ const CadastroGenero = () => {
       console.log(error)
     }
   }
+  async function editarGenero(genero) {
+    const { value: novoGenero } = await Swal.fire({
+      title: "Modifique seu gênero.",
+      input: "text",
+      inputLabel: "Novo gênero!",
+      inputValue: genero.nome,
+      showCancelButton: true,
+      inputValidator: (value) => {
+        if (!value) {
+          return "O campo precisa estar preenchido!";
+        }
+      }
+    });
+    if (novoGenero) {
+      try {
+        await api.put(`genero/${genero.idGenero}`,
+          { nome: novoGenero });
+        Swal.fire(`Seu novo gênero é ${novoGenero}`);
+      } catch (error) {
+        console.log(error);
 
+      }
+    }
+  }
 
 
 
@@ -129,12 +148,8 @@ const CadastroGenero = () => {
 
           //Atribuindo a funcao
           funcCadastro={cadastrarGenero}
-
           //Atribuindo o valor ao input
           valorInput={genero}
-
-
-
           //Atirbuindo a funcao que atualiza o meu genero
           setValorInput={setGenero}
         />
@@ -142,7 +157,8 @@ const CadastroGenero = () => {
           tituloLista="Lista de Gêneros"
           visibilidade="none"
           lista={listaGenero}
-          deletar={excluirGenero}
+          funcExcluir={excluirGenero}
+          funcEditar={editarGenero}
         />
         {/* atribuir para lista, o meu estado atual */}
 

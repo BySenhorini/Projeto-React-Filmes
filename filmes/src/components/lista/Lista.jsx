@@ -29,8 +29,15 @@ const Lista = (props) => {
                                 <tr className="item_lista" key={item.idGenero}>
                                     <td  data-cell="Nome">{item.nome}</td>
                                    <td data-cell="Gênero" style={{display:props.visibilidade}}>Ação</td>
-                                    <td data-cell="Editar"><img src={Editar} alt="Caneta"/></td>
-                                      <td data-cell="Excluir"><img src={Excluir} alt="Imagem de uma caixa de lixo" onClick={() => props.deletar(item.idGenero)} style={{cursor:"pointer"}}/>
+                                    <td data-cell="Editar">
+                                    <button onClick={() => {props.funcEditar(item)}}>
+                                        <img src={Editar} alt="Caneta"/>
+                                    </button> 
+                                    </td>
+                                      <td data-cell="Excluir">
+                                    <button onClick={() => (props.funcExcluir(item))}>
+                                        <img src={Excluir} alt="Imagem de uma caixa de lixo"/>
+                                    </button>
                                       </td>
                                 </tr>
                             ))
