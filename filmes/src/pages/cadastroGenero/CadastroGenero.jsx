@@ -16,7 +16,8 @@ const CadastroGenero = () => {
   //nome do genero
   const [genero, setGenero] = useState("");
   const [listaGenero, setListaGenero] = useState([]);
-const [deletaGenero, setDeletaGenero] = useState();
+  const [deletaGenero, setDeletaGenero] = useState();
+
 
   function alerta(icone, mensagem) {
     const Toast = Swal.mixin({
@@ -48,6 +49,7 @@ const [deletaGenero, setDeletaGenero] = useState();
         await api.post("genero", { nome: genero })
         alerta("success", "Cadastro realizado com sucesso!")
         setGenero("")
+        listarGenero();
       }
       catch (error) {
         alerta("error", "Erro! Entre em contato com o suporte!")
@@ -73,7 +75,6 @@ const [deletaGenero, setDeletaGenero] = useState();
   }
   async function excluirGenero(idGenero) {
 
-
     try {
       const excluirgenero = await api.delete(`genero/${idGenero}`);
       setDeletaGenero(excluirgenero.data)
@@ -81,7 +82,7 @@ const [deletaGenero, setDeletaGenero] = useState();
 
       Swal.fire({
         title: "Você tem certeza?",
-        text: "Essa alteração não poderá ser alterada!",
+        text: "Essa alteração não poderá ser desfeita!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -91,7 +92,7 @@ const [deletaGenero, setDeletaGenero] = useState();
         if (result.isConfirmed) {
           Swal.fire({
             title: "Deletado!",
-            text: "Seus arquivos vão ser deletados!",
+            text: "Seus arquivos serão deletados!",
             icon: "success"
           });
         }
