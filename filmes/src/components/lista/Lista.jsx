@@ -26,19 +26,24 @@ const Lista = (props) => {
                         {props.lista && props.lista.length > 0 ? (
                             // vamos mapear os itens da lista
                             props.lista.map((item) => (
-                                <tr className="item_lista" key={item.idGenero}>
-                                    <td  data-cell="Nome">{item.nome}</td>
-                                   <td data-cell="Gênero" style={{display:props.visibilidade}}>Ação</td>
-                                    <td data-cell="Editar">
-                                    <button onClick={() => {props.funcEditar(item)}}>
-                                        <img src={Editar} alt="Caneta"/>
-                                    </button> 
+                                // colocando uma condicao
+                                <tr className="item_lista" 
+                                key={props.tipoLista == "genero" ? item.idGenero : item.idFilme}>
+                                    <td data-cell="Nome">
+                                        {props.tipoLista == "genero" ? item.nome : item.titulo}
                                     </td>
-                                      <td data-cell="Excluir">
-                                    <button onClick={() => (props.funcExcluir(item))}>
-                                        <img src={Excluir} alt="Imagem de uma caixa de lixo"/>
-                                    </button>
-                                      </td>
+                                    <td data-cell="Gênero" style={{ display: props.visibilidade }}>
+                                        {item.genero?.nome}</td>
+                                    <td data-cell="Editar">
+                                        <button onClick={() => { props.funcEditar(item)}}>
+                                            <img src={Editar} alt="Caneta" />
+                                        </button>
+                                    </td>
+                                    <td data-cell="Excluir">
+                                        <button onClick={() => (props.funcExcluir(item))}>
+                                            <img src={Excluir} alt="Imagem de uma caixa de lixo" />
+                                        </button>
+                                    </td>
                                 </tr>
                             ))
                         ) :
